@@ -1,0 +1,75 @@
+package org.gcs.drone.variables;
+
+import org.gcs.MAVLink.MavLinkModes;
+import org.gcs.drone.Drone;
+import org.gcs.drone.DroneVariable;
+import org.gcs.fragments.markers.GuidedMarker;
+import org.gcs.fragments.markers.MarkerManager.MarkerSource;
+
+import android.content.Context;
+import android.widget.Toast;
+
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+public class GuidedPoint extends DroneVariable implements MarkerSource {
+	private OnGuidedListener listner;
+	private LatLng coord;
+
+	public interface OnGuidedListener {
+		public void onGuidedPoint(GuidedPoint guidedPoint);
+	}
+
+	public GuidedPoint(Drone myDrone) {
+		super(myDrone);
+	}
+
+	@Override
+	public MarkerOptions build(Context context) {
+		return GuidedMarker.build(this, myDrone.mission.getDefaultAlt(), context);
+	}
+
+	@Override
+	public void update(Marker markerFromGcp, Context context) {
+		GuidedMarker.update(markerFromGcp, this, myDrone.mission.getDefaultAlt(), context);
+	}
+
+	public LatLng getCoord() {
+		return coord;
+	}
+
+	public void setCoord(LatLng coord)
+	{
+		this.coord = coord;
+	}
+
+	public void newGuidedPoint(LatLng coord) {
+		this.coord = coord;
+		listner.onGuidedPoint(this);
+	}
+
+	public void setOnGuidedListner(OnGuidedListener listner) {
+		this.listner = listner;
+	}
+
+	public void setGuidedMode() {
+		Double altitude = myDrone.mission.getDefaultAlt();
+		setGuidedMode(new waypoint(getCoord(), altitude));
+		Toast.makeText(myDrone.context, "Guided Mode (" + altitude + "m)",
+				Toast.LENGTH_SHORT).show();
+	}
+
+	public void setGuidedMode(waypoint waypoint) {
+		MavLinkModes.setGuidedMode(myDrone, waypoint);
+	}
+
+	public void invalidateCoord() {
+		coord = null;
+	}
+
+	public boolean isCoordValid() {
+		return coord != null;
+	}
+
+}

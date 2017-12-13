@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/camerabg">
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Folder"
+            android:textSize="20sp"
+            android:textColor="@color/white" />
+
+       <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/EditText01"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:inputType="text"
+                android:singleLine="true" >
+
+                <requestFocus />
+            </EditText>
+
+            <org.gcs.FButton
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            fbutton:buttonColor="@color/fbutton_color_turquoise"
+   			fbutton:shadowColor="@color/fbutton_default_shadow_color"
+   			fbutton:shadowEnabled="false"
+   			fbutton:shadowHeight="5dp"
+   			fbutton:cornerRadius="5dp"
+            android:text="Browse" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ip_setting_label"
+            android:textSize="20sp"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <!-- address1 -->
+
+           <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <org.gcs.FButton
+		            android:id="@+id/address1_increment"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            fbutton:buttonColor="@color/fbutton_color_turquoise"
+		   			fbutton:shadowColor="@color/fbutton_default_shadow_color"
+		   			fbutton:shadowEnabled="false"
+		   			fbutton:shadowHeight="5dp"
+		   			fbutton:cornerRadius="5dp"
+		            android:text="@string/digits_increment" />
+
+                <EditText
+                    android:id="@+id/address1_input"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:singleLine="true" />
+
+
+                <org.gcs.FButton
+		            android:id="@+id/address1_decrement"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            fbutton:buttonColor="@color/fbutton_color_turquoise"
+		   			fbutton:shadowColor="@color/fbutton_default_shadow_color"
+		   			fbutton:shadowEnabled="false"
+		   			fbutton:shadowHeight="5dp"
+		   			fbutton:cornerRadius="5dp"
+		            android:text="@string/digits_decrement" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address_dot" 
+                android:textSize="20sp"/>
+
+            <!-- address2 -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical" >
+                
+                <org.gcs.FButton
+		            android:id="@+id/address2_increment"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            fbutton:buttonColor="@color/fbutton_color_turquoise"
+		   			fbutton:shadowColor="@color/fbutton_default_shadow_color"
+		   			fbutton:shadowEnabled="false"
+		   			fbutton:shadowHeight="5dp"
+		   			fbutton:cornerRadius="5dp"
+		            android:text="@string/digits_increment" />
+                
+
+                <EditText
+                    android:id="@+id/address2_input"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:singleLine="true" />
+
+				<org.gcs.FButton
+		            android:id="@+id/address2_decrement"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            fbutton:buttonColor="@color/fbutton_color_turquoise"
+		   			fbutton:shadowColor="@color/fbutton_default_shadow_color"
+		   			fbutton:shadowEnabled="false"
+		   			fbutton:shadowHeight="5dp"
+		   			fbutton:cornerRadius="5dp"
+		            android:text="@string/digits_decrement" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address_dot"
+                android:textSize="20sp" />
+
+            <!-- address3 -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical" >
+
+				<org.gcs.FButton
+		            android:id="@+id/address3_increment"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            fbutton:buttonColor="@color/fbutton_color_turquoise"
+		   			fbutton:shadowColor="@color/fbutton_default_shadow_color"
+		   			fbutton:shadowEnabled="false"
+		   			fbutton:shadowHeight="5dp"
+		   			fbutton:cornerRadius="5dp"
+		            android:text="@string/digits_increment" />
+
+                <EditText
+                    android:id="@+id/address3_input"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:singleLine="true" />
+
+                <org.gcs.FButton
+		            android:id="@+id/address3_decrement"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            fbutton:buttonColor="@color/fbutton_color_turquoise"
+		   			fbutton:shadowColor="@color/fbutton_default_shadow_color"
+		   			fbutton:shadowEnabled="false"
+		   			fbutton:shadowHeight="5dp"
+		   			fbutton:cornerRadius="5dp"
+		            android:text="@string/digits_decrement" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address_dot"
+                android:textSize="20sp" />
+
+            <!-- address4 -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <org.gcs.FButton
+		            android:id="@+id/address4_increment"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            fbutton:buttonColor="@color/fbutton_color_turquoise"
+		   			fbutton:shadowColor="@color/fbutton_default_shadow_color"
+		   			fbutton:shadowEnabled="false"
+		   			fbutton:shadowHeight="5dp"
+		   			fbutton:cornerRadius="5dp"
+		            android:text="@string/digits_increment" />
+
+                <EditText
+                    android:id="@+id/address4_input"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:singleLine="true" />
+
+				<org.gcs.FButton
+		            android:id="@+id/address4_decrement"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            fbutton:buttonColor="@color/fbutton_color_turquoise"
+		   			fbutton:shadowColor="@color/fbutton_default_shadow_color"
+		   			fbutton:shadowEnabled="false"
+		   			fbutton:shadowHeight="5dp"
+		   			fbutton:cornerRadius="5dp"
+		            android:text="@string/digits_decrement" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/port_setting_label"
+            android:textSize="20sp"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/port_input"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="right|center_vertical"
+                android:inputType="number"
+                android:maxLength="4"
+                android:singleLine="true" />
+
+            <RadioGroup
+                android:id="@+id/port_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RadioButton
+                    android:id="@+id/port_80"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/port_80_with_explanation" />
+
+                <RadioButton
+                    android:id="@+id/port_8080"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/port_8080_with_explanation" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/command_setting_label"
+            android:textSize="20sp"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/command_input"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:inputType="text"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/command_radiogroup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/command_streaming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/command_streaming_with_explanation" />
+
+            <RadioButton
+                android:id="@+id/command_videofeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/command_videofeed_with_explanation" />
+        </RadioGroup>
+
+       	<org.gcs.FButton
+			android:id="@+id/settings_done"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			fbutton:buttonColor="@color/fbutton_color_turquoise"
+		   	fbutton:shadowColor="@color/fbutton_default_shadow_color"
+		   	fbutton:shadowEnabled="false"
+		   	fbutton:shadowHeight="5dp"
+		   	fbutton:cornerRadius="5dp"
+			android:text="@string/settings_done" />
+    </LinearLayout>
+
+</ScrollView>

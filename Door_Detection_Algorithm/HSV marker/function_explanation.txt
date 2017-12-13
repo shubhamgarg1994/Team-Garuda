@@ -1,0 +1,22 @@
+
+void inRange(InputArray src, InputArray lowerb, InputArray upperb, OutputArray dst);
+
+ Checks that each element of 'src'  lies between 'lowerb' and 'upperb'.
+ If so, that respective location of  'dst' is assigned '255' ,  otherwise '0'.
+
+
+void erode( InputArray src, OutputArray dst, InputArray kernel, Point anchor=Point(-1,-1), int iterations=1, int borderType=BORDER_CONSTANT, const Scalar& borderValue=morphologyDefaultBorderValue())
+
+
+This function erode the source image and stores the result in the destination image.If the source image is multi-channel, all channels are processed independently and the result is stored in the destination image as separate channels.
+
+
+void dilate( InputArray src, OutputArray dst, InputArray kernel, 
+Point anchor=Point(-1,-1), int iterations=1,  int borderType=BORDER_CONSTANT,  const Scalar& borderValue=morphologyDefaultBorderValue())
+
+This function dilate the source image and stores the result in the destination image.If the source image is multi-channel, all channels are processed independently and the result is stored in the destination image as separate channels.
+
+
+void cvtColor( InputArray src, OutputArray dst, int code, int dstCn=0 )
+
+This function convert a source image from one color space to another. In-place processing is supported. (which means you can use the same variable for the source and destination image)

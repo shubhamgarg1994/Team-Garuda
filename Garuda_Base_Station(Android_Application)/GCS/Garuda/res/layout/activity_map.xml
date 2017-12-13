@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+    <fragment 
+          android:id="@+id/map"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:name="com.google.android.gms.maps.SupportMapFragment"/>
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignTop="@id/map"
+    android:padding="6dp"
+    android:background="#D000"
+    android:orientation="vertical">
+    <Spinner
+      android:id="@+id/layers_spinner"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+    <CheckBox
+      android:id="@+id/traffic"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:onClick="onTrafficToggled"
+      android:text="Traffic"/>
+    <CheckBox
+      android:id="@+id/my_location"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:onClick="onMyLocationToggled"
+      android:text="My Location"/>
+    <CheckBox
+      android:id="@+id/buildings"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:onClick="onBuildingsToggled"
+      android:checked="true"
+      android:text="Buildings"/>
+    <CheckBox
+      android:id="@+id/indoor"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:onClick="onIndoorToggled"
+      android:checked="true"
+      android:text="Indoor"/>
+    </LinearLayout>
+
+</RelativeLayout>
